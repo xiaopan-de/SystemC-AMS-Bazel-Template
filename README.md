@@ -3,12 +3,12 @@ SystemC-AMS-Bazel-Template is designed to jumpstart SystemC/.-TLM and SystemC-AM
 
 # Key Features:
 
-- Bazel Workspace: Instant setup with Bazel, integrating SystemC and SystemC-AMS.
-- Example Modules: Demonstrative SystemC and SystemC-AMS samples.
-- Dev Environments: Streamlined setup with DevContainer and Docker.
+- **Bazel** Workspace: Instant setup with Bazel, integrating SystemC and SystemC-AMS.
+- **Containerized Environments**: Streamlined setup with DevContainer and Docker.
+- **GTest Framework**: Integrated with Google Test for unit testing.
+- **CI Pipeline**: Automated builds and test with GitHub Actions.
 - Prebuilt Libraries: Ready-to-use SystemC/AMS libraries.
-- Testing Framework: Integrated with Google Test for unit testing.
-- CI Pipeline: Automated builds and test with GitHub Actions.
+- Example Modules: Demonstrative SystemC and SystemC-AMS samples.
 
 # Dev Environment Setup 
 
