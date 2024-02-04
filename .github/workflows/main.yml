@@ -1,0 +1,30 @@
+name: Build-and-Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  checks_and_tests:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup-bazel
+        uses: bazelbuild/setup-bazelisk@v3
+
+      - name: Mount bazel cache
+        uses: actions/cache@v4
+        with:
+          path: "~/.cache/bazel"
+          key: bazel
+
+      - name: Run all unit tests
+        run: bazel test --test_output=all //...
+        shell: bash
