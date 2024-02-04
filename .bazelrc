@@ -1,0 +1,6 @@
+build --cxxopt='-std=c++14'
+build --compilation_mode=dbg            # Debug compilation mode (-g)
+build --strip=never                     # Never strip debug information
+build --copt=-fdiagnostics-color=always # enable complier color output
+build --force_pic                       # links prefer PIC pre-built libraries
+
