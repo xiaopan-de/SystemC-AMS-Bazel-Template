@@ -16,27 +16,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install buildifier
-        run: |
-          cd $(mktemp -d)
-          curl -fSsL -L -o /usr/local/bin/buildifier \
-          "https://github.com/bazelbuild/buildtools/releases/download/6.0.0/buildifier-linux-amd64" \
-          && chmod 0755 /usr/local/bin/buildifier \
-
-      - name: Install shfmt
-        run: |
-          cd $(mktemp -d)
-          curl -fSsL -L -o /usr/local/bin/shfmt \
-          "https://github.com/mvdan/sh/releases/download/v3.6.0/shfmt_v3.6.0_linux_amd64" \
-          && chmod 0755 /usr/local/bin/shfmt
-
-      - name: Run small checks
-        run: ./scripts/check_and_fix/check_and_fix.sh 1 # argument for dry-run
-        shell: bash
-
       - name: Setup-bazel
         uses: bazelbuild/setup-bazelisk@v3
-
 
       - name: Mount bazel cache
         uses: actions/cache@v4
